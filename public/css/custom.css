@@ -1,0 +1,150 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+html
+			{
+				position: relative;
+				min-height: 100%;
+			}
+
+body
+			{
+				/* Margin bottom by footer height */
+				margin-bottom: 90px;
+				padding-top: 50px;
+			}
+
+.body-container
+			{
+				padding: 27px 0 0 0;
+			}
+
+.padded
+			{
+				padding-top: 30px
+			}
+
+.footer
+			{
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				/* Set the fixed height of the footer here */
+				height: 90px;
+				background-color: #f5f5f5;
+				padding-top: 20px;
+			}
+
+.logged-user
+			{
+				font-size: 3em;
+				font-weight: bolder;
+				color: #c5fa06;
+			}
+
+/*.navbar-nav > li > a, .navbar-brand
+			{
+			    padding-top: .3em !important;
+			    padding-bottom:0 !important;
+			    height: .5em;
+			}
+*/
+/*.navbar
+			{
+				min-height: .5em !important;
+			}*/
+
+.yellow-star
+			{
+				color: #B7950B;
+				text-shadow: -1px 0 #F4D03F, 0 1px #F4D03F, 1px 0 #F4D03F, 0 -1px #F4D03F;/*#B7950B;*/
+			}
+
+.hotel-name
+			{
+				font-variant: small-caps;
+				color: #D2691E; /*#59f1fa;*/
+				text-shadow: -1px 0 #800000, 0 1px #800000, 1px 0 #800000, 0 -1px #800000;
+			}
+
+.hotel-subtitle
+			{
+				color: #87CEEB;/*#6495ED; #4168E1;*/
+				text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+			}
+
+.app-title
+			{
+				text-align: center;
+			}
+
+.center-form
+			{
+				padding-top: 2em;
+				margin: 0 auto;
+				width: 80%;
+			}
+
+label
+			{
+				font-family: 'Lato', sans-serif;
+				font-size: 1.2em;
+			}
+
+textarea
+			{
+				min-width: 100%;
+			}
+
+#list-button
+			{
+				margin: 0 none;
+				width: 70%;
+				border-right: 1px solid #000;
+				padding: 0 0 1em 0;
+				margin-bottom: 1em;
+				font-family: 'Lato', sans-serif;
+				font-size: 2em;
+				background-color: #808080;
+			}
+
+#list-button ul
+			{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+
+#list-button li
+			{
+				border-bottom: 1px solid #708090;
+				margin: 0;
+			}
+
+#list-button li a
+			{
+				display: block;
+				padding: 5px 5px 5px 0.5em;
+				border-left: 10px solid #000;
+				border-right: 10px solid #C0C0C0;
+				background-color: #696969;
+				color: #fff;
+				text-decoration: none;
+				width: 100%;
+			}
+
+html>body #list-button li a
+			{
+				width: auto;
+			}
+
+#list-button li a:hover
+			{
+				border-left: 10px solid #A52A2A;/*#708090;*/
+				border-right: 10px solid #CD853F;/*#D3D3D3;*/
+				background-color: #D2691E;/*#A9A9A9;*/
+				color: #000;
+			}

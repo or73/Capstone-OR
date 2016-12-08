@@ -1,0 +1,29 @@
+{
+  "name": "mean-app",
+  "version": "1.0.0",
+  "description": "MEAN stack application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/or73/Capstoner-OR.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "OR",
+  "license": "ISC",
+  "homepage": "https://github.com/or73/Capstone-OR#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.8"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  }
+}
