@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <div class="container-fluid">
+
+    <h1>{{ vm.title }}</h1>
+
+    <ul id="list-button">
+      <li ng-repeat="hotel in vm.hotels">
+        <a ng-href="#!/hotel/{{ hotel._id }}">
+          {{ hotel.name }}
+        </a>
+      </li>
+    </ul>
+  </div> <!-- / .container-fluid -->
+</div> <!-- / .jumbotron -->

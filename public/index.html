@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="meanhotel">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport"
@@ -15,7 +15,8 @@
 	<body>
 		<div class="jumbotron">
 			<div class="container">
-			  <h1>MEAN hotel homepage</h1>
+				<div ng-view>
+				</div> <!-- / ng-view  -->
 
 			  <footer class="footer">
 			    <div class="container">
@@ -36,5 +37,14 @@
 		</div> <!-- / .jumbotron -->
 
 	  <script src="jquery/jquery-3.1.1.min.js"></script>
+
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-route/angular-route.js"></script>
+
+		<script src="angular-app/app.js"></script>
+		<script src="angular-app/hotel-list/hotel-list-controller.js"></script>
+		<script src="angular-app/hotel-display/hotel-display-controller.js"></script>
+		<script src="angular-app/hotel-data-factory/hotel-data-factory.js"></script>
+		<script src="angular-app/hotel-rating/hotel-rating-directive.js"></script>
 	</body>
 </html>
