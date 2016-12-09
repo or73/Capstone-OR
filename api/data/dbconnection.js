@@ -5,6 +5,7 @@ var _connection = null;
 
 var open =  function()
 						{
+							// set_connection
 						  MongoClient
 						  	.connect(dburl,
 						  					function(err, db)
@@ -15,7 +16,7 @@ var open =  function()
 											      return;
 											    }
 											    _connection = db;
-											    console.log("DB connection open");
+											    console.log("DB connection open: ", db);
 											  });
 						};
 

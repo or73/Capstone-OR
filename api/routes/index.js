@@ -1,3 +1,22 @@
+/*
+										- - -   HOTELS   - - -
+	Method		URL										Action
+
+	GET				/api/hotels						Get all/multiple hotels
+	POST			/api/hotels						Create a new hotel
+	GET				/api/hotels/1234567		Get a specific hotel
+	PUT				/api/hotels/1234567		Update a specific hotel
+	DELETE		/api/hotels/1234567		Delete a specific hotel
+
+										- - -   REVIEWS   - - -
+	Method		URL										Action
+	GET				/api/hotels/1234567/reviews						Get all reviews for a specific hotel
+	POST			/api/hotels/1234567/reviews						Add review for a specific hotel
+	GET				/api/hotels/1234567/reviews/1234567		Get a specific review for a hotel
+	PUT				/api/hotels/1234567/reviews/1234567		Update a specific review for a specific hotel
+	DELETE		/api/hotels/1234567/reviews/1234567		Delete a specific review
+*/
+
 var express = require('express');
 var router = express.Router();
 
