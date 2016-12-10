@@ -17,24 +17,35 @@ html
 body
 			{
 				/* Margin bottom by footer height */
-				margin-bottom: 90px;
-				padding-top: 50px;
+				margin-bottom: 60px;
+				padding-top: 30px;
 			}
+
+.jumbotron
+			{
+				margin: 0;
+				padding-top: 1em;
+				padding-bottom: 2em;
+			}
+/*.container
+			{
+				padding: 20px 0 0 0;
+			}*/
 
 div > div > .p-text
 			{
 				font-size: 1.3em;
 			}
 
-.body-container
+/*.body-container
 			{
 				padding: 27px 0 0 0;
-			}
+			}*/
 
-.padded
+/*.padded
 			{
 				padding-top: 30px
-			}
+			}*/
 
 .footer
 			{
@@ -49,22 +60,23 @@ div > div > .p-text
 
 .logged-user
 			{
-				font-size: 1.5em;
+				font-size: 1.7em;
 				font-weight: bolder;
+				font-variant: small-caps;
 				color: #c5fa06;
 			}
 
-/*.navbar-nav > li > a, .navbar-brand
+.navbar-nav > li > a, .navbar-brand
 			{
 			    padding-top: .3em !important;
 			    padding-bottom:0 !important;
 			    height: .5em;
 			}
-*/
-/*.navbar
+
+.navbar
 			{
 				min-height: .5em !important;
-			}*/
+			}
 
 .yellow-star
 			{

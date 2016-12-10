@@ -40,63 +40,47 @@
         </li>
     </ul>
 
-    <h3 class="hotel-subtitle">
-      Add Review
-    </h3>
+    <div ng-if="vm.isLoggedIn()">
+      <h3 class="hotel-subtitle">
+        Add Review
+      </h3>
+      <form name="vm.reviewForm"
+            ng-submit="vm.addReview()">
+        <div class="form-group">
+          <label for="rating">
+            Rating
+          </label>
+          <input  type="number"
+                  name="rating"
+                  required
+                  ng-pattern="/^[1-5]$/"
+                  ng-model="vm.rating"/>
+          <div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
+            <p>
+              Rating must be between 1-5
+            </p>
+          </div> <!-- / ng-show -->
+        </div> <!-- . /form-group -->
 
-    <form name="vm.reviewForm"
-          ng-submit="vm.addReview()">
-      <div class="form-group">
-        <label  for="name">
-          Name
-        </label>
-        <input  type="text"
-                class="form-control"
-                id="name"
-                required
-                ng-minlength="2"
-                ng-model="vm.name"/>
-        <div ng-show="vm.reviewForm.name.$dirty && vm.reviewForm.name.$invalid && vm.isSubmitted">
-          <p>
-            Name should be more than 2 characters long
-          </p>
-        </div> <!-- / ng-show -->
-      </div> <!-- / .form-group -->
+        <div class="form-group">
+          <label for="review">
+            Your review
+          </label>
+          <textarea  name="review"
+                      required
+                      ng-model="vm.review">
+          </textarea>
 
-      <div class="form-group">
-        <label for="rating">
-          Rating
-        </label>
-        <input  type="number"
-                name="rating"
-                required
-                ng-pattern="/^[1-5]$/"
-                ng-model="vm.rating"/>
-        <div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
-          <p>
-            Rating must be between 1-5
-          </p>
-        </div> <!-- / ng-show -->
-      </div> <!-- . /form-group -->
-
-      <div class="form-group">
-        <label for="review">
-          Your review
-        </label>
-        <textarea  name="review"
-                    required
-                    ng-model="vm.review">
-        </textarea>
-
-        <div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
-          <p>
-            Please add a review
-          </p>
-        </div>
-        <button type="submit" class="btn btn-warning">
-          Add Review
-        </button>
-      </div> <!-- / .form-group -->
-    </form>
+          <div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
+            <p>
+              Please add a review
+            </p>
+          </div>
+          <button type="submit" class="btn btn-warning">
+            Add Review
+          </button>
+        </div> <!-- / .form-group -->
+      </form>
+    </div> <!-- / ng-if -->
   </div> <!-- / . container-fluid -->
 </div> <!-- / .jumbotron -->

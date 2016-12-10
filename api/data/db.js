@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 var dburl = 'mongodb://localhost:27017/meanhotel';
 var retry = null;
 
@@ -77,3 +78,4 @@ process.on('SIGTERM',
 
 // BRING IN SCHEMAS & MODELS
 require('./hotels.model');
+require('./users.model');

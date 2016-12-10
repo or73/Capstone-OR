@@ -55,6 +55,7 @@ module
 	.exports
 	.hotelsGetAll = function(req, res)
 									{
+										console.log('Requested by: ' + req.user);
 									  console.log('GET the hotels');
 									  console.log(req.query);
 
