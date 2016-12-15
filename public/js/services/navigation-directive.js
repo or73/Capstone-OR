@@ -7,6 +7,6 @@ function mhNavigation()
 {
   return {
           restrict: 'E',
-          templateUrl: 'angular-app/navigation-directive/navigation-directive.html'
+          templateUrl: 'views/navigation-directive.html'
         };
 }

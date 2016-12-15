@@ -7,7 +7,7 @@ function hotelRating()
 {
   return {
             restrict: 'E',
-            template: '<span ng-repeat="star in vm.stars track by $index" class="glyphicon glyphicon-star yellow-star">{{ star }}</span>',
+            template: '<span ng-repeat="star in vm.stars track by $index"     class="glyphicon glyphicon-star yellow-star">{{ star }}</span>',
             bindToController: true,
             controller: 'HotelController',
             controllerAs: 'vm',

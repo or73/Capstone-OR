@@ -105,17 +105,17 @@ module
 									    .limit(count)
 									    .exec(function(err, hotels)
 												    {
-												      console.log(err);
+												      console.log('hotels.controllers - hotelsGetAll (error):', err);
 												      console.log(hotels);
 												      if (err)
 												      {
-												        console.log("Error finding hotels");
+												        console.log("hotels.controllers - hotelsGetAll (error): Error finding hotels");
 												        res
 												          .status(500)
 												          .json(err);
 												      } else
 												      {
-												        console.log("Found hotels", hotels.length);
+												        console.log("hotels.controllers - hotelsGetAll: Found hotels", hotels.length);
 												        res
 												          .json(hotels);
 												      }
@@ -129,7 +129,7 @@ module
 									{
 									  var id = req.params.hotelId;
 
-									  console.log('GET hotelId', id);
+									  console.log('hotels.controller - hotelsGetOne: GET hotelId', id);
 
 									  Hotel
 									    .findById(id)
@@ -141,12 +141,12 @@ module
 																				      };
 												      if (err)
 												      {
-												        console.log("Error finding hotel");
+												        console.log("hotels.controller - hotelsGetOne: Error finding hotel");
 												        response.status = 500;
 												        response.message = err;
 												      } else if(!doc)
 												      {
-												        console.log("HotelId not found in database", id);
+												        console.log("hotels.controller - hotelsGetOne: HotelId not found in database", id);
 												        response.status = 404;
 												        response.message = {
 																						          "message" : "Hotel ID not found " + id
@@ -175,7 +175,7 @@ module
 	.exports
 	.hotelsAddOne = function(req, res)
 									{
-									  console.log("POST new hotel");
+									  console.log("hotels.controller - hotelsAddOne: POST new hotel");
 
 									  Hotel
 									    .create({
@@ -193,13 +193,13 @@ module
 													    function(err, hotel)
 													    {
 													      if (err) {
-													        console.log("Error creating hotel");
+													        console.log("hotels.controller - hotelsAddOne: Error creating hotel");
 													        res
 													          .status(400)
 													          .json(err);
 													      } else
 													      {
-													        console.log("Hotel created!", hotel);
+													        console.log("hotels.controller - hotelsAddOne: Hotel created!", hotel);
 													        res
 													          .status(201)
 													          .json(hotel);
@@ -214,7 +214,7 @@ module
 											{
 											  var hotelId = req.params.hotelId;
 
-											  console.log('GET hotelId', hotelId);
+											  console.log('hotels.controller - hotelsUpdateOne: GET hotelId', hotelId);
 
 											  Hotel
 											    .findById(hotelId)
@@ -223,7 +223,7 @@ module
 														    {
 														      if (err)
 														      {
-														        console.log("Error finding hotel");
+														        console.log("hotels.controller - hotelsUpdateOne:Error finding hotel");
 														        res
 														          .status(500)
 														          .json(err);
@@ -231,7 +231,7 @@ module
 														        return;
 														      } else if(!hotel)
 														      {
-														        console.log("HotelId not found in database", hotelId);
+														        console.log("hotels.controller - hotelsUpdateOne:HotelId not found in database", hotelId);
 														        res
 														          .status(404)
 														          .lson({
@@ -289,7 +289,7 @@ module
 														          .json(err);
 														      } else
 														      {
-														        console.log("Hotel deleted, id:", hotelId);
+														        console.log("hotels.controller - hotelDeleteOne: Hotel deleted, id:", hotelId);
 														        res
 														          .status(204)
 														          .json();

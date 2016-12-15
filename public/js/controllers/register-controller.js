@@ -25,17 +25,17 @@ function RegisterController($http)
                     } else
                     {
                       $http
-                        .post('/api/users/register',
+                        .post('/app/users/register',
                               user)
                         .then(function(result)
                               {
-                                console.log(result);
+                                console.log('register-controller: ', result);
                                 vm.message = 'Successful registration, please login';
                                 vm.error = '';
                               })
                         .catch(function(error)
                               {
-                                console.log(error);
+                                console.log('register-controller (error): ', error);
                               });
                     }
                   }

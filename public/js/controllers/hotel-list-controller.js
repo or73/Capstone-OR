@@ -6,7 +6,7 @@ angular
 function HotelsController(hotelDataFactory)
 {
   var vm = this;
-  vm.title = 'MEAN Hotel app';
+  vm.title = 'MEAN Hotel Application';
 
   hotelDataFactory
     .hotelList()

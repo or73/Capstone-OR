@@ -28,7 +28,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper)
                               };
 
                   $http
-                    .post('/api/users/login', user)
+                    .post('/app/users/login', user)
                     .then(function(response)
                           {
                             if (response.data.success)
@@ -45,7 +45,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper)
                           })
                     .catch(function(error)
                           {
-                            console.log(error);
+                            console.log('login-controller: ', error);
                           });
                 }
               };

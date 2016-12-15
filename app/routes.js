@@ -2,27 +2,27 @@
 										- - -   HOTELS   - - -
 	Method		URL										Action
 
-	GET				/api/hotels						Get all/multiple hotels
-	POST			/api/hotels						Create a new hotel
-	GET				/api/hotels/1234567		Get a specific hotel
-	PUT				/api/hotels/1234567		Update a specific hotel
-	DELETE		/api/hotels/1234567		Delete a specific hotel
+	GET				/app/hotels						Get all/multiple hotels
+	POST			/app/hotels						Create a new hotel
+	GET				/app/hotels/1234567		Get a specific hotel
+	PUT				/app/hotels/1234567		Update a specific hotel
+	DELETE		/app/hotels/1234567		Delete a specific hotel
 
 										- - -   REVIEWS   - - -
 	Method		URL										Action
-	GET				/api/hotels/1234567/reviews						Get all reviews for a specific hotel
-	POST			/api/hotels/1234567/reviews						Add review for a specific hotel
-	GET				/api/hotels/1234567/reviews/1234567		Get a specific review for a hotel
-	PUT				/api/hotels/1234567/reviews/1234567		Update a specific review for a specific hotel
-	DELETE		/api/hotels/1234567/reviews/1234567		Delete a specific review
+	GET				/app/hotels/1234567/reviews						Get all reviews for a specific hotel
+	POST			/app/hotels/1234567/reviews						Add review for a specific hotel
+	GET				/app/hotels/1234567/reviews/1234567		Get a specific review for a hotel
+	PUT				/app/hotels/1234567/reviews/1234567		Update a specific review for a specific hotel
+	DELETE		/app/hotels/1234567/reviews/1234567		Delete a specific review
 */
 
 var express = require('express');
 var router = express.Router();
 
-var ctrlHotels = require('../controllers/hotels.controllers.js');
-var ctrlReviews = require('../controllers/reviews.controllers.js');
-var ctrlUsers = require('../controllers/users.controllers.js');
+var ctrlHotels = require('../public/js/controllers/hotels.controllers.js');
+var ctrlReviews = require('../public/js/controllers/reviews.controllers.js');
+var ctrlUsers = require('../public/js/controllers/users.controllers.js');
 
 // Hotel routes
 router

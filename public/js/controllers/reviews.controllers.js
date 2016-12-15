@@ -21,12 +21,12 @@ module
 																					      };
 													      if (err)
 													      {
-													        console.log("Error finding hotel");
+													        console.log("reviews.controllers - reviewsGetAll: Error finding hotel");
 													        response.status = 500;
 													        response.message = err;
 													      } else if(!doc)
 													      {
-													        console.log("Hotel id not found in database", id);
+													        console.log("reviews.controllers - reviewsGetAll: Hotel id not found in database", id);
 													        response.status = 404;
 													        response.message = {
 																							          "message" : "Hotel ID not found " + id
@@ -48,7 +48,7 @@ module
 										{
 										  var hotelId = req.params.hotelId;
 										  var reviewId = req.params.reviewId;
-										  console.log('GET reviewId ' + reviewId + ' for hotelId ' + hotelId);
+										  console.log('reviews.controllers - reviewsGetOne: GET reviewId ' + reviewId + ' for hotelId ' + hotelId);
 
 										  Hotel
 										    .findById(hotelId)
@@ -61,12 +61,12 @@ module
 																					      };
 													      if (err)
 													      {
-													        console.log("Error finding hotel");
+													        console.log("reviews.controllers - reviewsGetOne: Error finding hotel");
 													        response.status = 500;
 													        response.message = err;
 													      } else if(!hotel)
 													      {
-													        console.log("Hotel id not found in database", id);
+													        console.log("reviews.controllers - reviewsGetOne: Hotel id not found in database", id);
 													        response.status = 404;
 													        response.message = {
 																							          "message" : "Hotel ID not found " + id
@@ -125,7 +125,7 @@ module
 
 										  var id = req.params.hotelId;
 
-										  console.log('POST review to hotelId', id);
+										  console.log('reviews.controllers - reviewsAddOne: POST review to hotelId', id);
 
 										  Hotel
 										    .findById(id)
@@ -138,12 +138,12 @@ module
 																					      };
 													      if (err)
 													      {
-													        console.log("Error finding hotel");
+													        console.log("reviews.controllers - reviewsAddOne: Error finding hotel");
 													        response.status = 500;
 													        response.message = err;
 													      } else if(!doc)
 													      {
-													        console.log("HotelId not found in database", id);
+													        console.log("reviews.controllers - reviewsAddOne: HotelId not found in database", id);
 													        response.status = 404;
 													        response.message = {
 																							          "message" : "Hotel ID not found " + id
@@ -168,7 +168,7 @@ module
 											{
 											  var hotelId = req.params.hotelId;
 											  var reviewId = req.params.reviewId;
-											  console.log('PUT reviewId ' + reviewId + ' for hotelId ' + hotelId);
+											  console.log('reviews.controllers - reviewsUpdateOne: PUT reviewId ' + reviewId + ' for hotelId ' + hotelId);
 
 											  Hotel
 											    .findById(hotelId)
@@ -182,12 +182,12 @@ module
 																						      };
 														      if (err)
 														      {
-														        console.log("Error finding hotel");
+														        console.log("reviews.controllers - reviewsUpdateOne: Error finding hotel");
 														        response.status = 500;
 														        response.message = err;
 														      } else if(!hotel)
 														      {
-														        console.log("Hotel id not found in database", id);
+														        console.log("reviews.controllers - reviewsUpdateOne: Hotel id not found in database", id);
 														        response.status = 404;
 														        response.message = {
 																								          "message" : "Hotel ID not found " + id
@@ -241,7 +241,7 @@ module
 											{
 											  var hotelId = req.params.hotelId;
 											  var reviewId = req.params.reviewId;
-											  console.log('PUT reviewId ' + reviewId + ' for hotelId ' + hotelId);
+											  console.log('reviews.controllers - reviewsDeleteOne: PUT reviewId ' + reviewId + ' for hotelId ' + hotelId);
 
 											  Hotel
 											    .findById(hotelId)
@@ -255,12 +255,12 @@ module
 																						      };
 														      if (err)
 														      {
-														        console.log("Error finding hotel");
+														        console.log("reviews.controllers - reviewsDeleteOne: Error finding hotel");
 														        response.status = 500;
 														        response.message = err;
 														      } else if(!hotel)
 														      {
-														        console.log("Hotel id not found in database", id);
+														        console.log("reviews.controllers - reviewsDeleteOne: Hotel id not found in database", id);
 														        response.status = 404;
 														        response.message = {
 																								          "message" : "Hotel ID not found " + id

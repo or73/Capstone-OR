@@ -77,5 +77,5 @@ process.on('SIGTERM',
 });
 
 // BRING IN SCHEMAS & MODELS
-require('./hotels.model');
-require('./users.model');
+require('../app/models/hotels.model');
+require('../app/models/users.model');

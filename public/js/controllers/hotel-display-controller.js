@@ -59,7 +59,7 @@ function HotelController($route, $routeParams, $window, hotelDataFactory, AuthFa
                               })
                         .catch(function(error)
                               {
-                                console.log(error);
+                                console.log('hotel-display-controller: ', error);
                               });
                     } else
                     {

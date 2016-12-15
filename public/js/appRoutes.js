@@ -14,14 +14,14 @@ function config($httpProvider, $routeProvider)
   $routeProvider
     .when('/',
           {
-            templateUrl: 'angular-app/main/main.html',
+            templateUrl: 'views/main.html',
             access: {
                       restricted: false
                     }
           })
     .when('/hotels',
           {
-            templateUrl: 'angular-app/hotel-list/hotels.html',
+            templateUrl: 'views/hotels.html',
             controller: HotelsController,
             controllerAs: 'vm',
             access: {
@@ -30,7 +30,7 @@ function config($httpProvider, $routeProvider)
           })
     .when('/hotel/:id',
           {
-            templateUrl: 'angular-app/hotel-display/hotel.html',
+            templateUrl: 'views/hotel.html',
             controller: HotelController,
             controllerAs: 'vm',
             access: {
@@ -39,7 +39,7 @@ function config($httpProvider, $routeProvider)
           })
     .when('/register',
           {
-            templateUrl: 'angular-app/register/register.html',
+            templateUrl: 'views/register.html',
             controller: RegisterController,
             controllerAs: 'vm',
             access: {
@@ -48,7 +48,7 @@ function config($httpProvider, $routeProvider)
           })
     .when('/profile',
           {
-            templateUrl: 'angular-app/profile/profile.html',
+            templateUrl: 'views/profile.html',
             access: {
                       restricted: true
                     }
@@ -64,7 +64,10 @@ function run($rootScope, $location, $window, AuthFactory)
     .$on('$routeChangeStart',
           function(event, nextRoute, currentRoute)
           {
-            if (nextRoute.access != undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn)
+            if (nextRoute.access != undefined &&
+                nextRoute.access.restricted &&
+                !$window.sessionStorage.token &&
+                !AuthFactory.isLoggedIn)
             {
               event
                 .preventDefault();
