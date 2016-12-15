@@ -1,0 +1,22 @@
+{
+  "name": "meanhotel",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "body-parser": "latest",
+    "exec-plan": "latest",
+    "gulp-dom": "latest",
+    "gulp-shell": "latest",
+    "express": "latest",
+    "mongoose": "latest",
+    "ng-forward": "latest",
+    "nodemon": "latest",
+    "mocha": "latest",
+    "path-exists": "latest",
+    "reflect-metadata": "latest",
+    "yargs": "latest"
+  }
+}
