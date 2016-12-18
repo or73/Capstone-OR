@@ -2,6 +2,7 @@ var mongoose  = require('mongoose');
 var User      = mongoose.model('User');
 var bcrypt    = require('bcrypt-nodejs');
 var jwt       = require('jsonwebtoken');
+var registeredUser = '';
 
 module
   .exports
@@ -66,7 +67,7 @@ module
                                                 {
                                                   expiresIn: 3600
                                                 });
-
+                          registeredUser = username;
                           res
                             .status(200)
                             .json({
@@ -118,3 +119,21 @@ module
                       res.status(403).json('No token provided');
                     }
                   };
+
+module
+  .exports
+  .userProfileData = function(req, res)
+                    {
+                      console.log('users.controllers - userProfile: login in user');
+                      console.log('obtaining user data');
+
+                      User.find({'username': registeredUser},
+                                function(err, user)
+                                {
+                                  console.log('users.controllers - user:', user);
+                                  console.log('users.controllers - username:', user.username);
+                                  console.log('users.controllers - user:', user.user);
+                                  res.status(200).json(user);
+                                });
+
+                    };

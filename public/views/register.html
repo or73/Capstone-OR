@@ -1,66 +1,62 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>Register</h1>
+<h1>Register</h1>
 
-    <div  ng-if="vm.message"
-          class="alert alert-success"
-          role="alert">
-      <p>
-        {{ vm.message }}
-      </p>
-    </div> <!-- .alert -->
+<div  ng-if="vm.message"
+      class="alert alert-success"
+      role="alert">
+  <p>
+    {{ vm.message }}
+  </p>
+</div> <!-- .alert -->
 
-    <div  ng-if="vm.error"
-          class="alert alert-danger"
-          role="alert">
-      <p>
-        {{ vm.error }}
-      </p>
-    </div> <!-- / .alert -->
+<div  ng-if="vm.error"
+      class="alert alert-danger"
+      role="alert">
+  <p>
+    {{ vm.error }}
+  </p>
+</div> <!-- / .alert -->
 
-    <form ng-hide="vm.message"
-          name="register"
-          ng-submit="vm.register()">
-      <div class="form-group">
-        <label  for="username">
-          Username
-        </label>
-        <input  type="username"
-                class="form-control"
-                id="username"
-                placeholder="Input Username"
-                ng-model="vm.username"
-                autocapitaliza="none"/>
-      </div> <!-- / .form-group -->
+<form ng-hide="vm.message"
+      name="register"
+      ng-submit="vm.register()">
+  <div class="form-group">
+    <label  for="username">
+      Username
+    </label>
+    <input  type="username"
+            class="form-control"
+            id="username"
+            placeholder="Input Username"
+            ng-model="vm.username"
+            autocapitaliza="none"/>
+  </div> <!-- / .form-group -->
 
-      <div class="form-group">
-        <label for="password">
-          Password
-        </label>
-        <input  type="password"
-                class="form-control"
-                id="password"
-                placeholder="Input Password"
-                ng-model="vm.password"
-                autocapitalize="none"/>
-      </div> <!-- / .form-group -->
+  <div class="form-group">
+    <label for="password">
+      Password
+    </label>
+    <input  type="password"
+            class="form-control"
+            id="password"
+            placeholder="Input Password"
+            ng-model="vm.password"
+            autocapitalize="none"/>
+  </div> <!-- / .form-group -->
 
-      <div  class="form-group"
-        <label for="password-repeat">
-          Repeat Password
-        </label>
-        <input  type="password"
-                class="form-control"
-                id="password-repeat"
-                placeholder="Re-enter Password"
-                ng-model="vm.passwordRepeat"
-                autocapitaliza="none"/>
-      </div> <!-- / .form-group -->
+  <div  class="form-group"
+    <label for="password-repeat">
+      Repeat Password
+    </label>
+    <input  type="password"
+            class="form-control"
+            id="password-repeat"
+            placeholder="Re-enter Password"
+            ng-model="vm.passwordRepeat"
+            autocapitaliza="none"/>
+  </div> <!-- / .form-group -->
 
-      <button type="submit"
-              class="btn btn-success">
-        Register
-      </button>
-    </form>
-  </div> <!-- / .container -->
-</div> <!-- / .jumbotron -->
+  <button type="submit"
+          class="btn btn-success">
+    Register
+  </button>
+</form>

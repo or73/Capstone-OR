@@ -49,6 +49,11 @@ router
   .put(ctrlReviews.reviewsUpdateOne)
   .delete(ctrlReviews.reviewsDeleteOne);
 
+// Profile routes
+router
+  .route('/profile')
+  .get(ctrlUsers.userProfileData);
+
 // Authentication routes
 router
   .route('/users/register')

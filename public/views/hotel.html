@@ -1,86 +1,82 @@
-<div class="jumbotron">
-  <div class="container">
-    <h2 class="hotel-name">{{ vm.hotel.name }}</h2>
-    <hotel-rating stars="vm.stars"></hotel-rating>
+<h2 class="hotel-name">{{ vm.hotel.name }}</h2>
+<hotel-rating stars="vm.stars"></hotel-rating>
 
-    <h4 class="hotel-subtitle">
-      Address
-    </h4>
-    <p class="p-text">
-      {{ vm.hotel.location.address }}
-    </p>
+<h4 class="hotel-subtitle">
+  Address
+</h4>
+<p class="p-text">
+  {{ vm.hotel.location.address }}
+</p>
 
-    <h4 class="hotel-subtitle">
-      Description
-    </h4>
-    <p class="p-text">
-      {{ vm.hotel.description }}
-    </p>
+<h4 class="hotel-subtitle">
+  Description
+</h4>
+<p class="p-text">
+  {{ vm.hotel.description }}
+</p>
 
-    <h4 class="hotel-subtitle">
-      Services
-    </h4>
-    <p class="p-text">
-      <ul>
-        <li ng-repeat="service in vm.hotel.services">
-          {{ service }}
-        </li>
-      </ul>
-    </p>
+<h4 class="hotel-subtitle">
+  Services
+</h4>
+<p class="p-text">
+  <ul>
+    <li ng-repeat="service in vm.hotel.services">
+      {{ service }}
+    </li>
+  </ul>
+</p>
 
-    <h3 class="hotel-subtitle">
-      Comments
-    </h3>
-    <ul>
-        <li ng-repeat="review in vm.hotel.reviews">
-          <strong>Review By: {{ review.name}}</strong>
-          <p id="review-text">
-            {{ review.review }}
-          </p>
-        </li>
-    </ul>
+<h3 class="hotel-subtitle">
+  Comments
+</h3>
+<ul>
+    <li ng-repeat="review in vm.hotel.reviews">
+      <strong>Review By: {{ review.name}}</strong>
+      <p id="review-text">
+        {{ review.review }}
+      </p>
+    </li>
+</ul>
 
-    <div ng-if="vm.isLoggedIn()">
-      <h3 class="hotel-subtitle">
-        Add Review
-      </h3>
-      <form name="vm.reviewForm"
-            ng-submit="vm.addReview()">
-        <div class="form-group">
-          <label for="rating">
-            Rating
-          </label>
-          <input  type="number"
-                  name="rating"
+<div ng-if="vm.isLoggedIn()">
+  <h3 class="hotel-subtitle">
+    Add Review
+  </h3>
+  <form name="vm.reviewForm"
+        ng-submit="vm.addReview()">
+    <div class="form-group">
+      <label for="rating">
+        Rating
+      </label>
+      <input  type="number"
+              name="rating"
+              required
+              ng-pattern="/^[1-5]$/"
+              ng-model="vm.rating"/>
+      <div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
+        <p>
+          Rating must be between 1-5
+        </p>
+      </div> <!-- / ng-show -->
+    </div> <!-- . /form-group -->
+
+    <div class="form-group">
+      <label for="review">
+        Your review
+      </label>
+      <textarea  name="review"
                   required
-                  ng-pattern="/^[1-5]$/"
-                  ng-model="vm.rating"/>
-          <div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
-            <p>
-              Rating must be between 1-5
-            </p>
-          </div> <!-- / ng-show -->
-        </div> <!-- . /form-group -->
+                  ng-model="vm.review">
+      </textarea>
 
-        <div class="form-group">
-          <label for="review">
-            Your review
-          </label>
-          <textarea  name="review"
-                      required
-                      ng-model="vm.review">
-          </textarea>
-
-          <div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
-            <p>
-              Please add a review
-            </p>
-          </div>
-          <button type="submit" class="btn btn-warning">
-            Add Review
-          </button>
-        </div> <!-- / .form-group -->
-      </form>
-    </div> <!-- / ng-if -->
-  </div> <!-- / . container-fluid -->
-</div> <!-- / .jumbotron -->
+      <div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
+        <p>
+          Please add a review
+        </p>
+      </div>
+      <button type="submit" class="btn btn-warning">
+        Add Review
+      </button>
+    </div> <!-- / .form-group -->
+  </form>
+</div> <!-- / ng-if -->

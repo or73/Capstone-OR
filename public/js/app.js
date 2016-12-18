@@ -8,5 +8,6 @@ angular
             'hotel-display-controller',
             'login-controller',
             'register-controller',
+            'user-controller',
             'hotel-rating-directive',
             'navigation-directive']);

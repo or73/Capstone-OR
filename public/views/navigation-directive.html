@@ -1,98 +1,104 @@
-<!--<div class="jumbotron">-->
-  <!--<div class="container">-->
-    <nav  ng-controller="LoginController as vm"
-          class="navbar navbar-default navbar-fixed-top"
-          ng-init="vm.init()">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button"
-                  class="navbar-toggle collapsed"
-                  data-toggle="collapse"
-                  data-target="#navbar"
-                  aria-expanded="false"
-                  aria-controls="navbar">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand"
-              href="#/">
-            MeanHotel
+<nav  ng-controller="LoginController as vm"
+      class="navbar navbar-default navbar-fixed-top"
+      ng-init="vm.init()">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Mean Hotel</a>
+    </div> <!-- / .navbar-header -->
+
+    <div  class="collapse navbar-collapse"
+          id="navbar-menu">
+      <ul class="nav navbar-nav">
+        <li ng-class="vm.isActiveTab('')"
+            class="active">
+          <a href="#!/">Home
+            <span class="sr-only">
+            </span>
           </a>
-        </div> <!-- / .navbar-header -->
+        </li>
+        <li ng-class="vm.isActiveTab('hotels')">
+          <a href="#!/hotels">
+            Hotels
+          </a>
+        </li>
+        <li ng-class="vm.isActiveTab('register')"
+            ng-if="!vm.isLoggedIn()">
+          <a href="#!/register">
+            Register
+          </a>
+        </li>
+        <li ng-class="vm.isActiveTab('profile')"
+            ng-if="vm.isLoggedIn()">
+          <a href="#!/profile">
+            Profile
+          </a>
+        </li>
+      </ul>
 
-        <div  id="navbar"
-              class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li ng-class="vm.isActiveTab('')"
-                class="active">
-              <a href="#!/">Home</a>
-            </li>
-            <li ng-class="vm.isActiveTab('hotels')">
-              <a href="#!/hotels">
-                Hotels
-              </a>
-            </li>
-            <li ng-class="vm.isActiveTab('register')"
-                ng-if="!vm.isLoggedIn()">
-              <a href="#!/register">
-                Register
-              </a>
-            </li>
-            <li ng-class="vm.isActiveTab('profile')"
-                ng-if="vm.isLoggedIn()">
-              <a href="#!/profile">
-                Profile
-              </a>
-            </li>
-          </ul>
+      <form ng-if="!vm.isLoggedIn()"
+            id="signin"
+            class="navbar-form navbar-right"
+            role="login"
+            ng-submit="vm.login()">
+        <div  class="input-group"
+              ng-class="{'has-error': vm.error}">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-user"></i>
+          </span>
+          <input  id="username"
+                  type="text"
+                  class="form-control input-sm"
+                  name="username"
+                  value=""
+                  placeholder="Input Username"
+                  ng-model="vm.username"
+                  autocapitalize="none"/>
+        </div> <!-- / .input-group -->
 
-          <form ng-if="!vm.isLoggedIn()"
-                class="navbar-form navbar-right"
-                role="login"
-                ng-submit="vm.login()">
-            <div  class="form-group"
-                  ng-class="{'has-error': vm.error}">
-              <input  type="text"
-                      class="form-control input-sm"
-                      placeholder="Input Username"
-                      ng-model="vm.username"
-                      autocapitalize="none"/>
-            </div> <!-- / .form-group -->
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-lock"></i>
+          </span>
+          <input  id="password"
+                  type="password"
+                  class="form-control input-sm"
+                  name="password"
+                  value=""
+                  ng-model="vm.password"
+                  placeholder="Input Password"
+                  autocapitalize="none">
+        </div>
 
-            <div  class="form-group"
-                  ng-class="{'has-error': vm.error}">
-              <input  type="password"
-                      class="form-control input-sm"
-                      placeholder="Input Password"
-                      ng-model="vm.password"
-                      autocapitalize="none"/>
-            </div> <!-- / .form-group -->
+        <button type="submit"
+                class="btn btn-primary btn-sm">
+          Login
+        </button>
+      </form>
 
-            <button type="submit"
-                    class="btn btn-sm btn-success">
-              Login
-            </button>
-          </form>
-
-          <ul ng-if="vm.isLoggedIn()"
-              class="nav navbar-nav navbar-right">
-            <li>
-              <p class="navbar-text">
-                Welcome back <strong class="logged-user">{{ vm.loggedInUser }}</strong>
-              </p>
-            </li>
-            <li>
-              <button type="button"
-                      class="navbar-btn btn-sm btn-info"
-                      ng-click="vm.logout()">
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div> <!-- / .collapse -->
-      </div> <!-- / .container -->
-    </nav>
-  <!--</div>--> <!-- / .container -->
-<!--</div>--> <!-- / .jumbotron -->
+      <ul ng-if="vm.isLoggedIn()"
+          class="nav navbar-nav navbar-right logout-button">
+        <li>
+          <p class="navbar-text logout-button">
+            Welcome back <strong class="logged-user">{{ vm.loggedInUser }}</strong>
+          </p>
+        </li>
+        <li>
+          <button type="button"
+                  class="btn btn-danger btn-sm"
+                  ng-click="vm.logout()">
+            Logout
+          </button>
+        </li>
+      </ul>
+    </div> <!-- / .collapse -->
+  </div> <!-- / .container-fluid -->
+</nav>

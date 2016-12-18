@@ -49,6 +49,8 @@ function config($httpProvider, $routeProvider)
     .when('/profile',
           {
             templateUrl: 'views/profile.html',
+            controller: UserController,
+            controllerAs: 'vm',
             access: {
                       restricted: true
                     }

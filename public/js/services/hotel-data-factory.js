@@ -8,7 +8,8 @@ function hotelDataFactory($http)
   return {
             hotelList: hotelList,
             hotelDisplay: hotelDisplay,
-            postReview: postReview
+            postReview: postReview,
+            userProfileData: userProfileData
           };
 
   function hotelList()
@@ -32,8 +33,17 @@ function hotelDataFactory($http)
             .then(complete).catch(failed);
   }
 
+  function userProfileData()
+  {
+    console.log('* * * - userProfileData');
+    return $http
+            .get('app/profile')
+            .then(complete).catch(failed);
+  }
+
   function complete(response)
   {
+    console.log("response: ", response);
     return response;
   }
 

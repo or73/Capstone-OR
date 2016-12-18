@@ -17,8 +17,8 @@ html
 body
 			{
 				/* Margin bottom by footer height */
-				margin-bottom: 60px;
-				padding-top: 30px;
+				margin-bottom: 7em;
+				padding-top: 3em;
 			}
 
 .jumbotron
@@ -27,10 +27,35 @@ body
 				padding-top: 1em;
 				padding-bottom: 2em;
 			}
+
+.navbar-nav > li > a
+			{
+				padding: 0 15px;
+			}
 /*.container
 			{
 				padding: 20px 0 0 0;
 			}*/
+
+.package-title
+			{
+				font-weight: bold;
+				font-size: 1.3em;
+				color: #ff594b; /*rgb(255, 89, 75)*/
+			}
+
+.special-char
+			{
+				font-weight: bold;
+				color: #00bba0 ;
+			}
+
+/*[data-type~='h']*/
+h1,h2,h3
+			{
+				color: #fbba00;
+				font-variant: small-caps;
+			}
 
 div > div > .p-text
 			{
@@ -47,6 +72,38 @@ div > div > .p-text
 				padding-top: 30px
 			}*/
 
+img
+			{
+				display: block;
+		    margin: auto;
+			}
+
+.img-75
+			{
+					width: 75%;
+			}
+
+.img-50
+			{
+				width: 50%;
+			}
+
+.img-25
+			{
+		    width: 25%;
+			}
+
+.navbar-text
+			{
+				font-size: 0.7em;
+			}
+
+.logout-button
+			{
+				margin: 0 0;
+				padding: 0 1em;
+			}
+
 .footer
 			{
 				position: absolute;
@@ -60,7 +117,6 @@ div > div > .p-text
 
 .logged-user
 			{
-				font-size: 1.7em;
 				font-weight: bolder;
 				font-variant: small-caps;
 				color: #c5fa06;

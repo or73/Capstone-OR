@@ -21,6 +21,7 @@
     "angular": "^1.6.0",
     "angular-route": "^1.6.0",
     "body-parser": "^1.14.2",
+    "bootstrap": "^3.3.7",
     "exec-plan": "0.0.3",
     "express": "^4.14.0",
     "gulp-dom": "^0.9.17",
